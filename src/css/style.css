@@ -1,0 +1,550 @@
+/* Reset and base styles  */
+* {
+  padding: 0px;
+  margin: 0px;
+  border: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.root{
+  height: 785px;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+/* style.css */
+
+.dark-mode {
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+}
+
+.light-mode {
+  background-color: white;
+  color: rgb(4, 4, 4);
+}
+
+Light moda özel düzenleme 
+.light-mode h1,
+.light-mode h5 {
+  color: #333;
+
+}
+
+/* Diğer stillendirmeler */
+
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+/* Links */
+a,
+a:link,
+a:visited {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Common */
+aside,
+nav,
+footer,
+header,
+section,
+main {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+ul,
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+}
+
+
+svg {
+  
+  max-width: 100%;
+  height: auto;
+  margin-top: 30px;
+  font-size: 11px;
+}
+
+/* Form */
+input,
+textarea,
+button,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+/* Düzenle Sil Butonu başlangıç*/
+.editingForm {
+  margin: 0 auto;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+  background-color: rgb(182, 2, 2);
+  color: white;
+  padding: 20px;
+  z-index: 2;
+  opacity: 1;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  display: none;
+}
+
+.editingForm.active {
+  display: flex;
+}
+
+.overlay.active {
+  display: block;
+}
+
+.editingForm input,
+.editingForm textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.editingForm button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.editingForm button:hover {
+  background-color: #45a049;
+}
+
+/* Düzenle Sil Butonu bitiş*/
+
+input::-ms-clear {
+  display: none;
+}
+
+button,
+input[type=submit] {
+  display: flex;
+  align-items: end;
+  box-shadow: none;
+  background-color: transparent;
+  background: none;
+  cursor: pointer;
+  gap: 5px;
+  margin-left: 20px;
+}
+
+input:focus,
+input:active,
+button:focus,
+button:active {
+  outline: none;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+label {
+  cursor: pointer;
+}
+
+legend {
+  display: block;
+}
+
+svg path {
+  stroke: inherit;
+  stroke-width: inherit;
+
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  color: #F4F6FA;
+  cursor: default;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  bottom: 0;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+.none {
+  display: none !important;
+}
+
+.visually-hidden {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  width: 0px;
+  height: 0px;
+  display: block;
+  margin-left: -10000px;
+  background: transparent;
+  font-size: 0;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+/*TASK.JS Başlangıç*/
+
+.task__block {
+  position: relative;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;/* Kenarlık ekleyebilirsiniz */
+  border-radius: 8px;/* Köşe yuvarlatma */
+  margin-bottom: 10px;/* İki görev arasında boşluk bırakmak için */
+  padding: 10px;/* İçerik içinde boşluk bırakmak için */
+  background-color: #000000;/* Arka plan rengi */
+  color: white;
+}
+
+.task__block:last-child {
+  margin-right: 0;
+}
+
+.task__block:hover .task__modal {
+  opacity: 1;
+}
+
+.task__modal {
+  position: absolute;
+  opacity: 0;
+  transition: all 0.8s;
+  z-index: 1050;
+  width: 250px;
+  height: 100px;
+  background: #008ff5;
+  color: white;
+  border-radius: 10px;
+  margin-top: -105px;
+  pointer-events: none;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkbox {
+  margin-right: 10px;
+  /* Checkbox ile metin arasında boşluk bırakmak için */
+}
+
+.task__title {
+  flex: 1;/* Görev başlığının genişliğini ayarlamak için */
+  margin-right: 10px;/* Başlık ile düzenle/sil düğmeleri arasında boşluk bırakmak için */
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+.task__buttons {
+  display: flex;
+  align-items: center;
+}
+
+.edit-button,
+.delete-button {
+  background-color: #45a072;
+  color: white;
+  border-radius: 50px;
+  padding: 5px 10px;/* Düzenle/Sil düğmelerinin boyutunu ayarlamak için */
+  margin-right: 5px;/* Düzenle düğmesi ile Sil düğmesi arasında boşluk bırakmak için */
+}
+
+.delete-button{
+  background-color: #e53935;
+}
+
+/* Opsiyonel: Hover efektleri ekleyebilirsiniz */
+.edit-button:hover,
+.delete-button:hover {
+  background-color: #85a918;
+  cursor: pointer;
+}
+
+.task__description {
+  flex: 1;
+  /* Açıklama alanının genişliğini ayarlamak için */
+  margin-left: 12px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  overflow: hidden;
+}
+
+.task__type {
+  margin-right: 12px;
+  border-radius: 30px;
+  font-size: 15px;
+  line-height: 22px;
+  color: #FFFFFF;
+  display: inline-block;
+  display: flex;
+  align-self: flex-end;
+}
+
+.task__row {
+  display: flex;
+  align-items: center;
+}
+
+.task__heading {
+  margin-bottom: 20px;
+}
+
+/*TASK.JS. Bitiş*/
+
+.h1 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  margin-bottom: 6px;
+}
+
+.h5 {
+  font-size: 12px;
+  line-height: 18px;
+  opacity: 0.5;
+  margin-bottom: 20px;
+}
+
+.input {
+  padding: 16px 30px;
+  background: #2E3239;
+  border-radius: 10px;
+  width: 1120px;
+  height: 56px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.input:last-child {
+  margin-bottom: 0;
+}
+
+.line {
+  width: 1120px;
+  height: 0px;
+  opacity: 0.1;
+  border: 1px solid #F4F6FA;
+  margin-bottom: 20px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.completed {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 30px;
+}
+
+.completed__hiden {
+  padding: 12px 24px;
+  width: 235px;
+  height: 48px;
+  background: #2E3239;
+  border-radius: 9px;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: pointer;
+  color: #8C8E93;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.completed__hiden img {
+  margin-right: 12px;
+}
+
+.completed__count {
+  font-size: 14px;
+  line-height: 21px;
+  color: #8C8E93;
+  display: flex;
+}
+
+.button {
+  padding: 12px 24px;
+  background: #2E3239;
+  border-radius: 9px;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: pointer;
+  color: #ffffff;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  min-height: 267px;
+}
+
+@media (max-width: 1132px) {
+  .container {
+    max-width: 970px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .container {
+    max-width: 750px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .container {
+    max-width: none;
+    padding: 0 16px;
+  }
+}
+
+.wrapper {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.custom-checkbox+label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+
+.custom-checkbox+label::before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid #adb5bd;
+  border-radius: 0.25em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+
+.custom-checkbox:checked+label::before {
+  border-color: #0b76ef;
+  background-color: #0b76ef;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+
+.custom-checkbox:not(:disabled):not(:checked)+label:hover::before {
+  border-color: #b3d7ff;
+}
+
+.custom-checkbox:not(:disabled):active+label::before {
+  background-color: #b3d7ff;
+  border-color: #b3d7ff;
+}
+
+.custom-checkbox:disabled+label::before {
+  background-color: #e9ecef;
+}
+
+.checkbox {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
